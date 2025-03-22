@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "src"
+version = "0.0.1"
+description = "An MLOps project"
+authors = [{ name = "Janvita Reddy", email = "reddyjanvita11@gmail.com" }]
+requires-python = ">=3.7"  # Ensures compatibility with Python 3.7+
+
+[tool.setuptools]
+packages = { find = {} }
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }

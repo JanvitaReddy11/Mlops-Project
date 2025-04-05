@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction Form</h1>
+        <form method="post">
+            <label for="Pregnancies">Pregnancies</label>
+            <input type="number" name="Pregnancies" required>
+
+            <label for="Glucose">Glucose</label>
+            <input type="number" name="Glucose" required>
+
+            <label for="BloodPressure">Blood Pressure</label>
+            <input type="number" name="BloodPressure" required>
+
+            <label for="SkinThickness">Skin Thickness</label>
+            <input type="number" name="SkinThickness" required>
+
+            <label for="Insulin">Insulin</label>
+            <input type="number" name="Insulin" required>
+
+            <label for="BMI">BMI</label>
+            <input type="number" step="any" name="BMI" required>
+
+            <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+            <input type="number" step="any" name="DiabetesPedigreeFunction" required>
+
+            <label for="Age">Age</label>
+            <input type="number" name="Age" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if context %}
+            <div class="result" style="color: {% if 'Negative' in context %}green{% else %}red{% endif %};">
+                <p>{{ context }}</p>
+            </div>
+        {% endif %} 
+    </div>
+</body>
+</html>

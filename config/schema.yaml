@@ -1,0 +1,33 @@
+columns:
+  - Pregnancies: int
+  - Glucose: float
+  - BloodPressure: float
+  - SkinThickness: float
+  - Insulin: float
+  - BMI: float
+  - DiabetesPedigreeFunction: float
+  - Age: int
+  - Outcome: int
+
+numerical_columns:
+  - Pregnancies
+  - Glucose
+  - BloodPressure
+  - SkinThickness
+  - Insulin
+  - BMI
+  - DiabetesPedigreeFunction
+  - Age
+  - Outcome
+
+categorical_columns:
+
+
+num_features:
+  - Glucose
+  - BMI
+  - DiabetesPedigreeFunction
+  - Glucose
+  - BMI
+  - SkinThickness
+  

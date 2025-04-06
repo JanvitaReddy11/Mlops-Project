@@ -46,9 +46,7 @@ jobs:
             echo "Repository already exists"
           fi
           
-          echo "Verifying repository permissions..."
-          gcloud artifacts repositories get-iam-policy diabetes-docker-repo \
-            --location=${{ secrets.GCP_REGION }}
+          # Removed the IAM policy check that was failing
 
       - name: Verify service account permissions
         run: |

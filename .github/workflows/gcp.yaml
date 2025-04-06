@@ -20,6 +20,13 @@ jobs:
           service_account_key: ${{ secrets.GCP_SERVICE_KEY }}
           export_default_credentials: true
 
+      # Add this step to properly authenticate with service account
+      - name: Auth with Service Account
+        run: |
+          echo "${{ secrets.GCP_SERVICE_KEY }}" > sa-key.json
+          gcloud auth activate-service-account --key-file=sa-key.json
+          rm sa-key.json
+          
       - name: Verify Authentication Status
         run: |
           echo "Checking active account..."

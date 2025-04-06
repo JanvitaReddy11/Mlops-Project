@@ -16,7 +16,7 @@ jobs:
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
         with:
-          project_id: ${{ secrets.GCP_PROJECT_ID}}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SERVICE_KEY }}
           export_default_credentials: true
 
@@ -82,11 +82,9 @@ jobs:
 
       - name: Push to Artifact Registry with Debug
         run: |
-         
-          
           echo "Pushing image to Artifact Registry (with verbose output)..."
           docker push --verbose ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/diabetes-docker-repo/diabetes-app:latest
-        
+
       - name: Check Push Results
         run: |
           echo "Checking for image in repository..."

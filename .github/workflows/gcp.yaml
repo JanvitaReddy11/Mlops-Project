@@ -88,4 +88,4 @@ jobs:
             --platform=managed \
             --region=${{ secrets.GCP_REGION }} \
             --allow-unauthenticated \
-            --set-env-vars PORT=5000
+            

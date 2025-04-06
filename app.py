@@ -11,7 +11,7 @@ from typing import Optional
 # Import your constants and pipeline modules
 from src.constants import APP_HOST, APP_PORT
 from src.pipline.prediction_pipeline import DiabetesData, DiabetesClassifier
-from src.pipline.training_pipeline import TrainPipeline
+from src.pipeline.training_pipeline import TrainPipeline
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -105,4 +105,4 @@ async def predict_diabetes(request: Request):
 
 # Run the app
 if __name__ == "__main__":
-    app_run(app, host=APP_HOST, port=APP_PORT)
+    app_run(app, host=APP_HOST, port=8080)

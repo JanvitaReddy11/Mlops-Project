@@ -45,20 +45,6 @@ jobs:
           else
             echo "Repository already exists"
           fi
-          
-          # Removed the IAM policy check that was failing
-
-      - name: Verify service account permissions
-        run: |
-          echo "Checking service account permissions..."
-          ACTIVE_ACCOUNT=$(gcloud auth list --filter=status:ACTIVE --format="value(account)")
-          echo "Active account: $ACTIVE_ACCOUNT"
-          
-          echo "IAM roles for this account:"
-          gcloud projects get-iam-policy ${{ secrets.GCP_PROJECT_ID }} \
-            --flatten="bindings[].members" \
-            --format="table(bindings.role,bindings.members)" \
-            --filter="bindings.members:$ACTIVE_ACCOUNT"
 
       - name: Configure Docker for GCP
         run: |

@@ -11,7 +11,7 @@ from typing import Optional
 # Import your constants and pipeline modules
 from src.constants import APP_HOST, APP_PORT
 from src.pipline.prediction_pipeline import DiabetesData, DiabetesClassifier
-from src.pipeline.training_pipeline import TrainPipeline
+from src.pipline.training_pipeline import TrainPipeline
 
 # Initialize FastAPI app
 app = FastAPI()

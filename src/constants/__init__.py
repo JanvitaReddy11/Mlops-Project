@@ -69,4 +69,4 @@ MODEL_PUSHER_GCS_KEY = "model-registry"
 
 
 APP_HOST = "0.0.0.0"
-APP_PORT = 8080
+APP_PORT = 5000

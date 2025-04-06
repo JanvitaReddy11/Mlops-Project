@@ -1,7 +1,7 @@
 from google.cloud import storage
 import os
 from src.constants import  REGION_NAME
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 
 class GCSClient:

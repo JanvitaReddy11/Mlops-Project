@@ -71,7 +71,7 @@ jobs:
       - name: Push to Artifact Registry with Debug
         run: |
           echo "Pushing image to Artifact Registry (with verbose output)..."
-          docker push --verbose ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/diabetes-docker-repo/diabetes-app:latest
+          docker push ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/diabetes-docker-repo/diabetes-app:latest
 
       - name: Check Push Results
         run: |

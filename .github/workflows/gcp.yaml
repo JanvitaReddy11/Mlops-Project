@@ -28,12 +28,12 @@ jobs:
         run: |
           # Print variables for debugging (optional)
           echo "Region: ${{ secrets.GCP_REGION }}"
-          echo "Project: ${{ secrets.GCP_PROJECT }}"
+          echo "Project: ${{ secrets.GCP_PROJECT_ID }}"
           echo "Repository: diabetes-docker-repo"
           
           # Build and push the image
-          docker build --no-cache -t ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/diabetes-docker-repo/diabetes-app:latest .
-          docker push ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/diabetes-docker-repo/diabetes-app:latest
+          docker build --no-cache -t ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID}}/diabetes-docker-repo/diabetes-app:latest .
+          docker push ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/diabetes-docker-repo/diabetes-app:latest
 
       - name: Deploy to Cloud Run
         run: |
